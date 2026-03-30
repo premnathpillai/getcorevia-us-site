@@ -148,7 +148,8 @@ a {
 }
 
 .brand-text,
-.footer-brand {
+.footer-brand,
+.footer-link {
   color: var(--heading);
   font-size: 1rem;
 }
@@ -161,14 +162,17 @@ a {
   font-size: 0.96rem;
 }
 
-.site-nav a {
+.site-nav a,
+.footer-link {
   transition: color 0.2s ease, opacity 0.2s ease;
 }
 
 .site-nav a:hover,
 .site-nav a:focus-visible,
 .contact-note a:hover,
-.contact-note a:focus-visible {
+.contact-note a:focus-visible,
+.footer-link:hover,
+.footer-link:focus-visible {
   color: var(--heading);
 }
 
@@ -209,7 +213,8 @@ h1,
 h2,
 h3,
 p,
-ul {
+ul,
+ol {
   margin-top: 0;
 }
 
@@ -278,7 +283,8 @@ h3 {
 .button:focus-visible,
 .site-nav a:focus-visible,
 .brand:focus-visible,
-.contact-note a:focus-visible {
+.contact-note a:focus-visible,
+.footer-link:focus-visible {
   border-radius: 12px;
 }
 
@@ -310,12 +316,22 @@ h3 {
 }
 
 .hero-points,
-.bullet-list {
+.bullet-list,
+.insight-panel {
   display: grid;
   gap: 12px;
   padding: 0;
   margin: 0;
+}
+
+.hero-points,
+.bullet-list {
   list-style: none;
+}
+
+.insight-panel {
+  list-style: none;
+  counter-reset: insight-counter;
 }
 
 .hero-points {
@@ -416,7 +432,6 @@ h3 {
 
 .insight-panel {
   padding: 24px;
-  display: grid;
   gap: 18px;
 }
 
@@ -453,6 +468,24 @@ h3 {
   gap: 16px;
   padding: 20px 8px 0;
   color: var(--muted);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+    animation: none !important;
+  }
+
+  .button:hover,
+  .button:focus-visible {
+    transform: none;
+  }
 }
 
 @media (max-width: 1024px) {

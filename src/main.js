@@ -118,20 +118,20 @@ document.querySelector('#app').innerHTML = `
             discovery.
           </p>
         </div>
-        <div class="insight-panel" role="list" aria-label="Three reasons this matters">
-          <div class="insight-item" role="listitem">
+        <ol class="insight-panel" aria-label="Three reasons this matters">
+          <li class="insight-item">
             <span class="insight-number" aria-hidden="true">01</span>
             <p>Improve the quality and clarity of your website so customers trust what they find.</p>
-          </div>
-          <div class="insight-item" role="listitem">
+          </li>
+          <li class="insight-item">
             <span class="insight-number" aria-hidden="true">02</span>
             <p>Strengthen how your business appears in search with better structure and content.</p>
-          </div>
-          <div class="insight-item" role="listitem">
+          </li>
+          <li class="insight-item">
             <span class="insight-number" aria-hidden="true">03</span>
             <p>Make your business easier for AI systems to surface, understand, and recommend.</p>
-          </div>
-        </div>
+          </li>
+        </ol>
       </section>
 
       <section class="section two-column" aria-labelledby="why-corevia-title">
@@ -189,6 +189,7 @@ document.querySelector('#app').innerHTML = `
         <span class="footer-brand">Corevia</span>
       </div>
       <p>AI-powered digital growth for small businesses.</p>
+      <a class="footer-link" href="mailto:info@getcorevia.us?subject=Corevia%20Inquiry">Contact Corevia</a>
     </footer>
   </div>
 `
