@@ -1,10 +1,11 @@
 import './style.css'
 
 document.querySelector('#app').innerHTML = `
+  <a class="skip-link" href="#main-content">Skip to main content</a>
   <div class="page-shell">
     <header class="site-header">
       <a class="brand" href="#top" aria-label="Corevia home">
-        <span class="brand-mark">C</span>
+        <span class="brand-mark" aria-hidden="true">C</span>
         <span class="brand-text">Corevia</span>
       </a>
       <nav class="site-nav" aria-label="Primary">
@@ -12,21 +13,23 @@ document.querySelector('#app').innerHTML = `
         <a href="#why-it-matters">Why It Matters</a>
         <a href="#contact">Contact</a>
       </nav>
-      <a class="button button-secondary header-cta" href="#contact">Get in Touch</a>
+      <a class="button button-secondary header-cta" href="#contact" aria-label="Jump to contact section">
+        Get in Touch
+      </a>
     </header>
 
-    <main id="top">
-      <section class="hero section">
+    <main id="main-content" tabindex="-1">
+      <section class="hero section" id="top" aria-labelledby="hero-title">
         <div class="hero-copy">
           <p class="eyebrow">AI-powered digital growth for small businesses</p>
-          <h1>Improve your website, grow your visibility, and show up where customers search — including AI.</h1>
+          <h1 id="hero-title">Improve your website, grow your visibility, and show up where customers search — including AI.</h1>
           <p class="hero-text">
             Corevia helps small businesses improve their digital presence with AI-powered solutions for websites, SEO,
             digital commerce, and visibility across both search engines and emerging AI platforms.
           </p>
           <div class="hero-actions">
-            <a class="button button-primary" href="#contact">Book a Call</a>
-            <a class="button button-secondary" href="mailto:info@getcorevia.us">Get in Touch</a>
+            <a class="button button-primary" href="#contact" aria-label="Jump to contact section to book a call">Book a Call</a>
+            <a class="button button-secondary" href="mailto:info@getcorevia.us?subject=Corevia%20Inquiry" aria-label="Email Corevia at info@getcorevia.us">Get in Touch</a>
           </div>
           <ul class="hero-points" aria-label="Corevia benefits">
             <li>Website optimization</li>
@@ -35,8 +38,8 @@ document.querySelector('#app').innerHTML = `
           </ul>
         </div>
 
-        <aside class="hero-card" aria-label="Corevia focus areas">
-          <p class="card-label">What Corevia helps improve</p>
+        <aside class="hero-card" aria-labelledby="focus-areas-title">
+          <h2 class="card-heading" id="focus-areas-title">What Corevia helps improve</h2>
           <div class="metric-card">
             <span class="metric-title">Digital Presence</span>
             <strong>Sharper websites</strong>
@@ -55,10 +58,10 @@ document.querySelector('#app').innerHTML = `
         </aside>
       </section>
 
-      <section class="section intro">
+      <section class="section intro" aria-labelledby="intro-title">
         <div class="section-heading">
           <p class="eyebrow">A smarter digital partner for growing businesses</p>
-          <h2>Modern systems, practical AI, and a digital presence built to perform.</h2>
+          <h2 id="intro-title">Modern systems, practical AI, and a digital presence built to perform.</h2>
         </div>
         <p class="section-copy intro-copy">
           Small businesses need more than a website — they need a digital presence that helps customers find them,
@@ -67,35 +70,35 @@ document.querySelector('#app').innerHTML = `
         </p>
       </section>
 
-      <section class="section" id="services">
+      <section class="section" id="services" aria-labelledby="services-title">
         <div class="section-heading">
           <p class="eyebrow">Services</p>
-          <h2>What Corevia helps you improve</h2>
+          <h2 id="services-title">What Corevia helps you improve</h2>
         </div>
         <div class="service-grid">
-          <article class="service-card">
-            <h3>Website Optimization</h3>
+          <article class="service-card" aria-labelledby="service-website-title">
+            <h3 id="service-website-title">Website Optimization</h3>
             <p>
               Improve website structure, messaging, performance, and user experience so your business looks credible,
               converts better, and supports growth.
             </p>
           </article>
-          <article class="service-card">
-            <h3>SEO & Search Visibility</h3>
+          <article class="service-card" aria-labelledby="service-seo-title">
+            <h3 id="service-seo-title">SEO & Search Visibility</h3>
             <p>
               Help your business rank more effectively in traditional search through stronger content, site structure,
               metadata, and optimization strategy.
             </p>
           </article>
-          <article class="service-card">
-            <h3>AI Search & Chat Visibility</h3>
+          <article class="service-card" aria-labelledby="service-ai-title">
+            <h3 id="service-ai-title">AI Search & Chat Visibility</h3>
             <p>
               Prepare your business for the future of discovery by improving how it appears in AI-powered search tools,
               chat experiences, and recommendation environments.
             </p>
           </article>
-          <article class="service-card">
-            <h3>Digital Commerce Support</h3>
+          <article class="service-card" aria-labelledby="service-commerce-title">
+            <h3 id="service-commerce-title">Digital Commerce Support</h3>
             <p>
               Strengthen the digital side of selling with clearer offers, better customer flow, and conversion-focused
               online experiences.
@@ -104,10 +107,10 @@ document.querySelector('#app').innerHTML = `
         </div>
       </section>
 
-      <section class="section split-section" id="why-it-matters">
+      <section class="section split-section" id="why-it-matters" aria-labelledby="why-it-matters-title">
         <div class="section-heading split-copy">
           <p class="eyebrow">Why it matters</p>
-          <h2>Search is changing. Your business should be ready.</h2>
+          <h2 id="why-it-matters-title">Search is changing. Your business should be ready.</h2>
           <p class="section-copy">
             Customers are no longer only finding businesses through traditional search engines. They’re increasingly
             discovering products, services, and recommendations through AI-powered tools and chat interfaces. Corevia
@@ -115,27 +118,27 @@ document.querySelector('#app').innerHTML = `
             discovery.
           </p>
         </div>
-        <div class="insight-panel">
-          <div class="insight-item">
-            <span class="insight-number">01</span>
+        <div class="insight-panel" role="list" aria-label="Three reasons this matters">
+          <div class="insight-item" role="listitem">
+            <span class="insight-number" aria-hidden="true">01</span>
             <p>Improve the quality and clarity of your website so customers trust what they find.</p>
           </div>
-          <div class="insight-item">
-            <span class="insight-number">02</span>
+          <div class="insight-item" role="listitem">
+            <span class="insight-number" aria-hidden="true">02</span>
             <p>Strengthen how your business appears in search with better structure and content.</p>
           </div>
-          <div class="insight-item">
-            <span class="insight-number">03</span>
+          <div class="insight-item" role="listitem">
+            <span class="insight-number" aria-hidden="true">03</span>
             <p>Make your business easier for AI systems to surface, understand, and recommend.</p>
           </div>
         </div>
       </section>
 
-      <section class="section two-column">
+      <section class="section two-column" aria-labelledby="why-corevia-title">
         <div>
           <div class="section-heading">
             <p class="eyebrow">Why Corevia</p>
-            <h2>Practical AI, not hype.</h2>
+            <h2 id="why-corevia-title">Practical AI, not hype.</h2>
           </div>
           <ul class="bullet-list">
             <li>Modern digital strategy with real business value</li>
@@ -147,9 +150,9 @@ document.querySelector('#app').innerHTML = `
         <div>
           <div class="section-heading">
             <p class="eyebrow">Who we work with</p>
-            <h2>Built for businesses that want to grow without added complexity.</h2>
+            <h2 id="who-we-work-with-title">Built for businesses that want to grow without added complexity.</h2>
           </div>
-          <ul class="bullet-list">
+          <ul class="bullet-list" aria-labelledby="who-we-work-with-title">
             <li>Your website feels outdated or underperforming</li>
             <li>Your business isn’t showing up well in search</li>
             <li>You want better visibility online but aren’t sure where to start</li>
@@ -159,30 +162,30 @@ document.querySelector('#app').innerHTML = `
         </div>
       </section>
 
-      <section class="section cta-section" id="contact">
+      <section class="section cta-section" id="contact" aria-labelledby="contact-title">
         <div class="cta-copy">
           <p class="eyebrow">Contact</p>
-          <h2>Let’s make your business easier to find — and easier to choose.</h2>
+          <h2 id="contact-title">Let’s make your business easier to find — and easier to choose.</h2>
           <p class="section-copy">
             Whether you want to improve your website, strengthen SEO, or prepare your business for AI-driven discovery,
             Corevia can help you take the next step.
           </p>
         </div>
-        <div class="contact-card">
-          <a class="button button-primary button-wide" href="mailto:info@getcorevia.us?subject=Corevia%20Inquiry">
+        <address class="contact-card">
+          <a class="button button-primary button-wide" href="mailto:info@getcorevia.us?subject=Corevia%20Inquiry" aria-label="Email Corevia to book a call">
             Book a Call
           </a>
-          <a class="button button-secondary button-wide" href="mailto:info@getcorevia.us">
+          <a class="button button-secondary button-wide" href="mailto:info@getcorevia.us?subject=Corevia%20Inquiry" aria-label="Email Corevia for more information">
             Get in Touch
           </a>
           <p class="contact-note">Or email directly at <a href="mailto:info@getcorevia.us">info@getcorevia.us</a></p>
-        </div>
+        </address>
       </section>
     </main>
 
     <footer class="site-footer">
       <div>
-        <span class="brand-mark small">C</span>
+        <span class="brand-mark small" aria-hidden="true">C</span>
         <span class="footer-brand">Corevia</span>
       </div>
       <p>AI-powered digital growth for small businesses.</p>

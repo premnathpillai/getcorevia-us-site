@@ -5,7 +5,7 @@
   --surface-soft: rgba(255, 255, 255, 0.04);
   --border: rgba(154, 177, 214, 0.18);
   --text: #dbe7ff;
-  --muted: #97aacd;
+  --muted: #b9c9e6;
   --heading: #f7fbff;
   --accent: #79a8ff;
   --accent-strong: #8e7dff;
@@ -45,6 +45,28 @@ body {
   min-height: 100vh;
 }
 
+:focus-visible {
+  outline: 3px solid #ffd76a;
+  outline-offset: 3px;
+}
+
+.skip-link {
+  position: absolute;
+  left: 16px;
+  top: -56px;
+  z-index: 100;
+  padding: 12px 16px;
+  border-radius: 12px;
+  background: #ffffff;
+  color: #081120;
+  font-weight: 700;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+.skip-link:focus {
+  top: 16px;
+}
+
 a {
   color: inherit;
   text-decoration: none;
@@ -57,6 +79,10 @@ a {
 
 #app {
   min-height: 100vh;
+}
+
+#main-content:focus {
+  outline: none;
 }
 
 .page-shell {
@@ -172,7 +198,7 @@ a {
 
 .eyebrow {
   margin: 0 0 14px;
-  color: var(--accent);
+  color: #a8c7ff;
   text-transform: uppercase;
   letter-spacing: 0.14em;
   font-size: 0.76rem;
@@ -247,6 +273,13 @@ h3 {
 .button:hover,
 .button:focus-visible {
   transform: translateY(-1px);
+}
+
+.button:focus-visible,
+.site-nav a:focus-visible,
+.brand:focus-visible,
+.contact-note a:focus-visible {
+  border-radius: 12px;
 }
 
 .button-primary {
@@ -330,7 +363,12 @@ h3 {
   font-size: 0.8rem;
   text-transform: uppercase;
   letter-spacing: 0.12em;
-  color: var(--accent);
+  color: #a8c7ff;
+}
+
+.card-heading {
+  margin: 0;
+  font-size: 1.2rem;
 }
 
 .metric-card {
@@ -401,6 +439,7 @@ h3 {
   padding: 24px;
   display: grid;
   gap: 14px;
+  font-style: normal;
 }
 
 .contact-note {
